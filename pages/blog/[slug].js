@@ -32,29 +32,51 @@ const Post = ({ post }) => {
     name = "Missing name",
     categories,
     authorImage,
+    mainImage,
     body = [],
   } = post;
   return (
-    <article>
-      <h1>{title}</h1>
-      <span>By {name}</span>
-      {categories && (
-        <ul>
-          Posted in
-          {categories.map((category) => (
-            <li key={category}>{category}</li>
-          ))}
-        </ul>
-      )}
-      {authorImage && (
-        <div>
-          <img
-            src={urlFor(authorImage).width(50).url()}
-            alt={`${name}'s picture`}
-          />
+    <article className="m-10 mx-auto shadow-md rounded-lg border border-gray-200 flex flex-col items-center justify-center dark:border-gray-700 dark:bg-gray-800 ">
+      <div className="m-10">
+        <h1 className="text-4xl flex justify-center font-bold">{title}</h1>
+        <div className="flex flex-center justify-center mt-3">
+          <span className="bg-primary-100 text-primary-800 text-xs  justify-center font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+            <svg
+              className="mr-1 w-3 h-3"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                clip-rule="evenodd"
+              ></path>
+              <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
+            </svg>
+            {categories}
+          </span>
         </div>
-      )}
-      <PortableText value={body} components={ptComponents} />
+
+        {/* {authorImage && (
+          <div>
+            <img
+              src={urlFor(authorImage).width(50).url()}
+              alt={`${name}'s picture`}
+            />
+          </div>
+        )} */}
+        {mainImage && (
+          <div className="my-5">
+            <img
+              className="w-full h-40 object-cover"
+              src={urlFor(mainImage).url()}
+              alt={`${name}'s picture`}
+            />
+          </div>
+        )}
+        <PortableText value={body} components={ptComponents} />
+      </div>
     </article>
   );
 };
@@ -64,6 +86,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
+  mainImage,
   body
 }`;
 export async function getStaticPaths() {
@@ -73,7 +96,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
+    fallback: "blocking",
   };
 }
 

@@ -19,6 +19,7 @@ const Blog = ({ posts }) => {
             title={post.title}
             key={post.name}
             url={urlFor(post.imageUrl).width(200)}
+            slugUrl={post.slug.current}
           />
 
           //   <Card
@@ -44,7 +45,8 @@ export async function getServerSideProps() {
     "name": author->name,
     title,
     "imageUrl": author->image,
-    mainImage
+    mainImage,
+    slug
   } | order(publishedAt desc)
     `);
   return {

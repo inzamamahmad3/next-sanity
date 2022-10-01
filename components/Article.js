@@ -8,7 +8,7 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Article = ({ contents }) => {
+const Article = ({ posts }) => {
   return (
     <div>
       <section className="bg-white dark:bg-gray-900">
@@ -75,11 +75,13 @@ const Article = ({ contents }) => {
                 </a>
               </div>
             </article> */}
-            {(contents || []).map((content) => (
+            {(posts || []).map((post) => (
               <CardNew
-                title={content.title}
+                title={post.title}
+                slugUrl={post.slug.current}
+                url={urlFor(post.imageUrl).width(200)}
                 // url={urlFor(post.imageUrl).width(200).url()}
-                key={content.name}
+                key={post.name}
               />
             ))}
           </div>
@@ -92,17 +94,18 @@ const Article = ({ contents }) => {
 export default Article;
 
 export async function getServerSideProps() {
-  const contents = await client.fetch(groq`
+  const posts = await client.fetch(groq`
   *[_type == 'post']{
     "name": author->name,
     title,
     "imageUrl": author->image,
-    mainImage
+    mainImage,
+    slug
   } | order(publishedAt desc)[0...2]
     `);
   return {
     props: {
-      contents,
+      posts,
     },
   };
 }

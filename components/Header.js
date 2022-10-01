@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import Logo from "../public/face.png";
 
 const Header = () => {
   return (
@@ -48,7 +46,7 @@ const Header = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                     clipRule="evenodd"
                   ></path>
@@ -75,7 +73,7 @@ const Header = () => {
                 <li>
                   <a
                     href={"/"}
-                    className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
+                    className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-black lg:p-0 dark:text-white hover:text-primary-700 "
                     aria-current="page"
                   >
                     Home
@@ -84,7 +82,7 @@ const Header = () => {
 
                 <li>
                   <a
-                    href="#"
+                    href="/about"
                     className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                   >
                     About
