@@ -1,6 +1,7 @@
 import React from "react";
+import { NextSeo } from "next-seo";
 
-const CardNew = ({ title, url, slugUrl }) => {
+const CardNew = ({ title, url, slugUrl, content }) => {
   return (
     <div>
       <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 hover:scale-105 transition ease-in-out">
@@ -26,9 +27,7 @@ const CardNew = ({ title, url, slugUrl }) => {
           <a href="#">{title}</a>
         </h2>
         <p className="mb-5 font-light text-gray-500 dark:text-gray-400">
-          Static websites are now used to bootstrap lots of websites and are
-          becoming the basis for a variety of tools that even influence both web
-          designers and developers influence both web designers and developers.
+          {content}
         </p>
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-4">

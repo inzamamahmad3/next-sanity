@@ -38,7 +38,9 @@ const Post = ({ post }) => {
   return (
     <article className="m-10 mx-auto shadow-md rounded-lg border border-gray-200 flex flex-col items-center justify-center dark:border-gray-700 dark:bg-gray-800 ">
       <div className="m-10">
-        <h1 className="text-4xl flex justify-center font-bold">{title}</h1>
+        <h1 className="text-4xl tracking-wide flex justify-center font-bold">
+          {title}
+        </h1>
         <div className="flex flex-center justify-center mt-3">
           <span className="bg-primary-100 text-primary-800 text-xs  justify-center font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
             <svg
@@ -75,7 +77,9 @@ const Post = ({ post }) => {
             />
           </div>
         )}
-        <PortableText value={body} components={ptComponents} />
+        <div className="text-xl leading-3">
+          <PortableText value={body} components={ptComponents} />
+        </div>
       </div>
     </article>
   );
@@ -86,6 +90,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
+  description,
   mainImage,
   body
 }`;

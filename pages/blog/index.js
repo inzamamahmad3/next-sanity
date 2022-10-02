@@ -4,6 +4,7 @@ import groq from "groq";
 import Card from "../../components/Card";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
+import { NextSeo } from "next-seo";
 import CardNew from "../../components/CardNew";
 const builder = imageUrlBuilder(client);
 function urlFor(source) {
@@ -20,6 +21,7 @@ const Blog = ({ posts }) => {
             key={post.name}
             url={urlFor(post.imageUrl).width(200)}
             slugUrl={post.slug.current}
+            content={post.description}
           />
 
           //   <Card
@@ -46,6 +48,7 @@ export async function getServerSideProps() {
     title,
     "imageUrl": author->image,
     mainImage,
+    description,
     slug
   } | order(publishedAt desc)
     `);

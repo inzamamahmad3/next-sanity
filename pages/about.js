@@ -25,9 +25,10 @@ const about = () => {
               I&apos;m a full stack software engineer. Currently Learning
               Blockchain Developement.
               <br /> Love to write about technical concepts. Currently building
-              a tech community for Blockchain and web 3.
-              <br /> If you wanna write for this website you can directly msg.
-              This is for community. Here is my Email
+              a tech community for Blockchain. <br />
+              Web 3 advocate If you wanna write for this website you can
+              directly msg. <br />
+              This is for community. Contact me
             </p>
           </div>
           <div>
