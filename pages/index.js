@@ -4,7 +4,6 @@ import Hero from "../components/Hero";
 import Content from "../components/Content";
 import CTA from "../components/CTA";
 import Testimonial from "../components/Testimonial";
-import Footer from "../components/Footer";
 import Article from "../components/Article";
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
       <CTA />
       <Article />
       <Testimonial />
-      <Footer />
     </div>
   );
 }

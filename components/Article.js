@@ -1,5 +1,6 @@
 import React from "react";
 import client from "../client";
+import { CryptoCurrencyMarket } from "react-ts-tradingview-widgets";
 import groq from "groq";
 import CardNew from "./CardNew";
 import imageUrlBuilder from "@sanity/image-url";
@@ -84,6 +85,13 @@ const Article = ({ posts }) => {
                 key={post.name}
               />
             ))}
+          </div>
+          <div>
+            <CryptoCurrencyMarket
+              colorTheme="transperant"
+              width="100%"
+              height={500}
+            ></CryptoCurrencyMarket>
           </div>
         </div>
       </section>
