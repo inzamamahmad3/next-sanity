@@ -14,10 +14,9 @@ const Content = () => {
             </h2>
             <p className="mb-4">
               We are strategists, designers and developers. Innovators and
-              problem solvers. Small enough to be simple and quick, but big
-              enough to deliver the scope you want at the pace you need. Small
-              enough to be simple and quick, but big enough to deliver the scope
-              you want at the pace you need.
+              problem solvers. Using existed resources to give you highly
+              curated blog posts. Thats help to make decision about you next
+              project investments etc.
             </p>
             <p>
               We are strategists, designers and developers. Innovators and

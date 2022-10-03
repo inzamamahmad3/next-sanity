@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Subscribe from "./Subscribe";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800">
+    <div className="">
+      <footer className="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800 grid gap-10 lg:grid-cols-2">
         <div className="mx-auto max-w-screen-xl text-center">
           <a
             href={"/"}
@@ -34,6 +35,9 @@ const Footer = () => {
             </Link>
             . All Rights Reserved.
           </span>
+        </div>
+        <div>
+          <Subscribe />
         </div>
       </footer>
     </div>

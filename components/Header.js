@@ -1,10 +1,40 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import twitter from "../public/twitter.png";
 import github from "../public/github.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 
 const Header = () => {
+  const { systemTheme, theme, setTheme } = useTheme();
+  // const { mounted, setMounted } = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  });
+  const renderThemeChanger = () => {
+    if (!mounted) return null;
+    const currentTheme = theme === "system" ? systemTheme : theme;
+    if (currentTheme === "dark") {
+      return (
+        <SunIcon
+          className="w-6 h-6 mb-2"
+          role="button"
+          onClick={() => setTheme("light")}
+        />
+      );
+    } else {
+      return (
+        <MoonIcon
+          className="w-6 h-6 mb-2"
+          role="button"
+          onClick={() => setTheme("dark")}
+        />
+      );
+    }
+  };
   return (
     <div>
       <header>
@@ -39,6 +69,7 @@ const Header = () => {
                   <Image src={twitter} height={20} width={20} alt="twitter" />
                 </a>
               </Link>
+              {renderThemeChanger()}
               {/* <button
                 data-collapse-toggle="mobile-menu-2"
                 type="button"
@@ -81,7 +112,7 @@ const Header = () => {
                 <li>
                   <a
                     href={"/"}
-                    className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-black lg:p-0 dark:text-white hover:text-primary-700 "
+                    className="block py-2 pr-4 pl-3  rounded bg-primary-700 lg:bg-transparent lg:text-black lg:p-0 dark:text-gray-400 hover:text-primary-700  dark:hover:text-white"
                     aria-current="page"
                   >
                     Home

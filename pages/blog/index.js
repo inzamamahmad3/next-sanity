@@ -1,6 +1,7 @@
 import React from "react";
 import client from "../../client";
 import groq from "groq";
+import Subscribe from "../../components/Subscribe";
 import Card from "../../components/Card";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";

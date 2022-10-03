@@ -19,8 +19,8 @@ const Article = ({ posts }) => {
               Our Blog
             </h2>
             <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
-              We use an agile approach to test assumptions and connect with the
-              needs of your audience early and often.
+              Keep yourself updated with web3 content and data. Stay in business
+              in every year.
             </p>
           </div>
           <div className="grid gap-8 lg:grid-cols-2">

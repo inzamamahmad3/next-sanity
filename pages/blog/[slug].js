@@ -77,7 +77,7 @@ const Post = ({ post }) => {
             />
           </div>
         )}
-        <div className="text-xl leading-3">
+        <div className="text-xl leading-3 sm:text-2xl">
           <PortableText value={body} components={ptComponents} />
         </div>
       </div>

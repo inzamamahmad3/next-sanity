@@ -9,7 +9,7 @@ const about = () => {
       <div className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 ">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-3xl font-sans m-6 font-bold">
-            Hello EveryOne, My name is Inzamam Ahmad
+            Hello EveryOne, I&apos;m Inzamam Ahmad
           </h1>
           <div>
             <Image
