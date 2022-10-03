@@ -4,12 +4,16 @@ import { CryptoCurrencyMarket } from "react-ts-tradingview-widgets";
 import groq from "groq";
 import CardNew from "./CardNew";
 import imageUrlBuilder from "@sanity/image-url";
+
+import { useTheme } from "next-themes";
 const builder = imageUrlBuilder(client);
 function urlFor(source) {
   return builder.image(source);
 }
 
 const Article = ({ posts }) => {
+  const { systemTheme, theme, setTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
   return (
     <div>
       <section className="bg-white dark:bg-gray-900">
@@ -88,7 +92,7 @@ const Article = ({ posts }) => {
           </div>
           <div>
             <CryptoCurrencyMarket
-              colorTheme="transperant"
+              colorTheme={currentTheme === "dark" ? "dark" : "light"}
               width="100%"
               height={500}
             ></CryptoCurrencyMarket>

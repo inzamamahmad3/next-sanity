@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
           titleTemplate="Inzamam Ahmad"
           defaultTitle="Inzamam Ahmad"
           description="A full stack developer. Learning Blockchain and developing something new. Blockchain consultant. Love to write about technical concepts."
-          canonical="https://www.avneesh.tech/"
+          canonical="https://medium.com/@InzamamAhmad"
           openGraph={{
             url: "https://www.builders22.com/",
             title: "Inzamam Ahmad",

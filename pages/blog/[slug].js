@@ -3,7 +3,6 @@ import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
 import client from "../../client";
-import Image from "next/image";
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
@@ -36,31 +35,32 @@ const Post = ({ post }) => {
     body = [],
   } = post;
   return (
-    <article className="m-10 mx-auto shadow-md rounded-lg border border-gray-200 flex flex-col items-center justify-center dark:border-gray-700 dark:bg-gray-800 ">
-      <div className="m-10">
-        <h1 className="text-4xl tracking-wide flex justify-center font-bold">
-          {title}
-        </h1>
-        <div className="flex flex-center justify-center mt-3">
-          <span className="bg-primary-100 text-primary-800 text-xs  justify-center font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
-            <svg
-              className="mr-1 w-3 h-3"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
-                clip-rule="evenodd"
-              ></path>
-              <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
-            </svg>
-            {categories}
-          </span>
-        </div>
+    <main>
+      <article className="m-20  shadow-md rounded-lg border border-gray-200 flex flex-col items-center justify-center dark:border-gray-700 dark:bg-gray-800 ">
+        <div className="m-10">
+          <h1 className="text-4xl tracking-wide flex justify-center font-bold">
+            {title}
+          </h1>
+          <div className="flex flex-center justify-center mt-3">
+            <span className="bg-primary-100 text-primary-800 text-xs  justify-center font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+              <svg
+                className="mr-1 w-3 h-3"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                  clip-rule="evenodd"
+                ></path>
+                <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
+              </svg>
+              {categories}
+            </span>
+          </div>
 
-        {/* {authorImage && (
+          {/* {authorImage && (
           <div>
             <img
               src={urlFor(authorImage).width(50).url()}
@@ -68,20 +68,22 @@ const Post = ({ post }) => {
             />
           </div>
         )} */}
-        {mainImage && (
-          <div className="my-5">
-            <img
-              className="w-full h-40 object-cover"
-              src={urlFor(mainImage).url()}
-              alt={`${name}'s picture`}
-            />
+          {mainImage && (
+            <div className="my-5 flex justify-center items-center">
+              <img
+                className=" w-3/5 h-96 rounded-md object-cover"
+                src={urlFor(mainImage).url()}
+                alt={`${name}'s picture`}
+              />
+            </div>
+          )}
+          <div className="text-lg leading-loose m-20 sm:text-xl">
+            <PortableText value={body} components={ptComponents} />
           </div>
-        )}
-        <div className="text-xl leading-3 sm:text-2xl">
-          <PortableText value={body} components={ptComponents} />
         </div>
-      </div>
-    </article>
+      </article>
+      <hr className="max-w-lg my-5 mx-auto border border-gray-500" />
+    </main>
   );
 };
 

@@ -4,7 +4,7 @@ import Subscribe from "./Subscribe";
 const Footer = () => {
   return (
     <div className="">
-      <footer className="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800 grid gap-10 lg:grid-cols-2">
+      <footer className="p-4 bg-white sm:m-10 sm:p-10 sm:items-center md:p-8 lg:p-10 dark:bg-gray-800 grid gap-10 lg:grid-cols-2">
         <div className="mx-auto max-w-screen-xl text-center">
           <a
             href={"/"}
@@ -36,7 +36,7 @@ const Footer = () => {
             . All Rights Reserved.
           </span>
         </div>
-        <div>
+        <div className="sm:ml-16 sm:pl-10 ">
           <Subscribe />
         </div>
       </footer>

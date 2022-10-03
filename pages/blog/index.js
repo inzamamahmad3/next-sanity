@@ -51,7 +51,7 @@ export async function getServerSideProps() {
     mainImage,
     description,
     slug
-  } | order(publishedAt desc)
+  } | order(_createdAt desc)
     `);
   return {
     props: {
