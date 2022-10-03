@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import First from "../public/metaverse.jpg";
+import First from "../public/Metaverse.jpg";
 import Second from "../public/blockchain.png";
 
 const Content = () => {
