@@ -77,7 +77,7 @@ const Post = ({ post }) => {
               />
             </div>
           )}
-          <div className="text-lg leading-loose m-20 sm:text-xl">
+          <div className="text-lg leading-loose sm:m-0 sm:text-xl md:m-10 lg:m-20">
             <PortableText value={body} components={ptComponents} />
           </div>
         </div>
