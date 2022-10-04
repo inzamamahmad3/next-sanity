@@ -36,7 +36,7 @@ const Post = ({ post }) => {
   } = post;
   return (
     <main>
-      <article className="m-20  shadow-md rounded-lg border border-gray-200 flex flex-col items-center justify-center dark:border-gray-700 dark:bg-gray-800 ">
+      <article className="shadow-md rounded-lg border border-gray-200 flex flex-col items-center justify-center dark:border-gray-700 dark:bg-gray-800 sm:m-0 md:m-10 lg:m-20 ">
         <div className="m-10">
           <h1 className="text-4xl tracking-wide flex justify-center font-bold">
             {title}
@@ -69,9 +69,9 @@ const Post = ({ post }) => {
           </div>
         )} */}
           {mainImage && (
-            <div className="my-5 flex justify-center items-center">
+            <div className="my-5 flex justify-center items-center overflow-auto sm:w-auto">
               <img
-                className=" w-3/5 h-96 rounded-md object-cover"
+                className="h-70 rounded-md object-cover sm:w-full md:w-3/5 lg:w-3/5 sm:h-70 md:h-80 lg:h-96"
                 src={urlFor(mainImage).url()}
                 alt={`${name}'s picture`}
               />
