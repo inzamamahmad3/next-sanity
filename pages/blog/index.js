@@ -14,7 +14,7 @@ function urlFor(source) {
 
 const Blog = ({ posts }) => {
   return (
-    <div className="m-20">
+    <div className="sm:m-7 md:m-10 lg:m-20">
       <div className="grid gap-8 lg:grid-cols-2">
         {posts.map((post) => (
           <CardNew
